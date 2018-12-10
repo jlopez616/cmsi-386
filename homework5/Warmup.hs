@@ -10,6 +10,8 @@ module Warmup
     , surfaceArea
     ) where
 
+import Data.Char
+
 change :: Integer -> Either String (Integer, Integer, Integer, Integer)
 change amount =
     if amount < 0 then
@@ -32,7 +34,7 @@ firstUppercasedOverLengthFive str =
          [] -> Nothing
          text -> Just (map toUpper (text !! 0))
 
-powers :: Integer -> [Integer]
+powers :: Num a => a -> [a]
 powers y = [1] ++ [y ^ x | x <- [1..]]
 
 sumOfCubesOfOdds :: [Integer] -> Integer
